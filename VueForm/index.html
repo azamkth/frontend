@@ -1,80 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Vue Form</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="./js/vue.js"></script>
-</head>
-<body>
-    <div>
-        <form id="app">
-            <span v-for="e in errors">{{e}}</span>
-            <section v-if="step == 1">
-                <h3>Step 1</h3>
-                <input v-model="form.name" type="text" placeholder="name">
-            </section>
-            <section v-if="step == 2">
-                <h3>Step 2</h3>
-                <input v-model="form.phone" type="text" placeholder="Phone">
-            </section>
-            <section v-if="step == 3">
-                <h3>Step 3</h3>
-                <input v-model="form.email" type="text" placeholder="email">
-            </section>
-            <button v-if="step != 1" @click.prevent="previousStep">Previous steps</button>
-            <button v-if="step != totalsteps" @click.prevent="nextStep">Next steps</button>
-            <button v-if="step == 3" @click.prevent="sendEnquiry">Submit</button>
-        </form>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue Form</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./js/vue.js"></script>
+    </head>
+    <body>
+        <div>
+            <form id="app">
+                <span >{{ e }}</span>
+                <section v-if="step == 1">
+                    <h3>Step 1</h3>
+                    <input v-model="form.name" type="text" placeholder="name">
+                </section>
+                <section v-if="step == 2">
+                    <h3>Step 2</h3>
+                    <input v-model="form.phone" type="text" placeholder="Phone">
+                </section>
+                <section v-if="step == 3">
+                    <h3>Step 3</h3>
+                    <input v-model="form.email" type="text" placeholder="email">
+                </section>
+                <button v-if="step != 1" @click.prevent="previousStep">Previous steps</button>
+                <button v-if="step != totalsteps" @click.prevent="nextStep">Next steps</button>
+                <button v-if="step == 3" @click.prevent="sendEnquiry">Submit</button>
+            </form>
+        </div>
 
-    <script>
-        new Vue({
-            el: '#app',
-            data:{
-                step:1,
-                totalsteps:3,
-                errors:[],
+        <script>
+            new Vue({
+                el: '#app',
+                data:{
+                    step:1,
+                    totalsteps:3,
+                    errors:[],
 
-                form:{
-                    name: null,
-                    email: null,
-                    phone: null,
-                    message: null
-                }
-            },
-            methods:{
-                nextStep: function(){
-                    if(this.step == 1){
-                        if(!this.form.name){
-                            this.errors = "please fill out your name";
-                            return false;        
-                        }        
+                    form:{
+                        name: null,
+                        email: null,
+                        phone: null,
+                        message: null
                     }
-                    if(this.step == 2){
-                        if(!this.form.phone){
-                            this.errors = "please fill out your Phone";
-                            return false;        
-                        }        
-                    }
-                    this.step++;
                 },
-                previousStep: function(){
-                    this.step--;
-                },
-                sendEnquiry: function(){
-                    if(this.step == 3){
-                        if(!this.form.email){
-                            this.errors = "please fill out your email address";
-                            return false;        
-                        }        
+                methods:{
+                    nextStep: function(){
+                        if(this.step == 1){
+                            if(!this.form.name){
+                                this.errors = "please fill out your name";
+                                return false;        
+                            }        
+                        }
+                        if(this.step == 2){
+                            if(!this.form.phone){
+                                this.errors = "please fill out your Phone";
+                                return false;        
+                            }        
+                        }
+                        this.step++;
+                    },
+                    previousStep: function(){
+                        this.step--;
+                    },
+                    sendEnquiry: function(){
+                        if(this.step == 3){
+                            if(!this.form.email){
+                                this.errors = "please fill out your email address";
+                                return false;        
+                            }        
+                        }
+                        this.errors = null;
+                        alert('Submit');
                     }
-                    this.errors = null;
-                    alert('Submit');
-                }
-            }    
-        })
-    </script>
-</body>
-
+                }    
+            })
+        </script>
+    </body>
 </html>
