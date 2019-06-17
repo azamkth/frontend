@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Composing with components</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./js/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p v-if="onSale">On sale</p>
+            <p v-else>Not on sale</p>
+          </div>
+
+        <script>
+        
+        new Vue({
+            el: '#app',
+            data:{
+                onSale: false
+            }
+        })
+        </script>
+    </body>
+</html>
