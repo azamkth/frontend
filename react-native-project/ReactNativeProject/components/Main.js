@@ -11,16 +11,16 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Parents from './parents/Parents';
 import Children from './childrens/Children';
 
-function HomeScreen() {
+function HomeScreen(props) {
     return (
         <View>
             <TouchableOpacity 
-                onPress={() => alert('parents')}
+                onPress={() => props.navigation.navigate('Parents')}
             >
                 <Text style={{color:'#000'}}>Parents</Text>
             </TouchableOpacity>
             <TouchableOpacity 
-                onPress={() => alert('Children')}
+                onPress={() => props.navigation.navigate('Children')}
             >
                 <Text style={{color:'#000'}}>Children</Text>
             </TouchableOpacity>
