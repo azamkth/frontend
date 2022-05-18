@@ -9,6 +9,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Test from './Test';
+import Children from './Children';
 
 
 const Tab = createBottomTabNavigator();
@@ -37,15 +38,24 @@ export default function Parents(props) {
             >
             <Tab.Screen
                 name="Uppdrag"
-                component={Test}
+                component={Children}
+                options={{
+                    headerShown: false
+                }}
             />
             <Tab.Screen
                 name="Köpta"
                 component={Test}
+                options={{
+                    headerShown: false
+                }}
             />
             <Tab.Screen
                 name="Vunna"
                 component={Test}
+                options={{
+                    headerShown: false
+                }}
             />
         </Tab.Navigator>
     );
