@@ -2,7 +2,8 @@ import React from 'react';
 import {
     View,
     Text,
-    TouchableOpacity
+    TouchableOpacity,
+    SafeAreaView,
 } from 'react-native';
  
 import { NavigationContainer } from '@react-navigation/native';
@@ -14,7 +15,7 @@ import Children from './childrens/Children';
 
 function HomeScreen(props) {
     return (
-        <View>
+        <SafeAreaView>
             <TouchableOpacity 
                 onPress={() => props.navigation.navigate('Parents')}
             >
@@ -26,7 +27,7 @@ function HomeScreen(props) {
             >
                 <Text style={{color:'#000'}}>Children</Text>
             </TouchableOpacity>
-        </View>
+        </SafeAreaView>
     );
   }
 

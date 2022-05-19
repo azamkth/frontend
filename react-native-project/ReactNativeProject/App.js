@@ -8,6 +8,7 @@ import React from 'react';
 import {
    SafeAreaView,
    StatusBar,
+   View
    //useColorScheme,
 } from 'react-native';
  
@@ -15,10 +16,10 @@ import Main from './components/Main';
 
 export default function App() {
     return (
-        <SafeAreaView  style={{flex:1}}>
-            <StatusBar barStyle={'dark-content'} />
+        <View  style={{flex:1}}>
+            <StatusBar barStyle={'light-content'} />
             <Main />
-        </SafeAreaView>
+        </View>
     );
 };
  
