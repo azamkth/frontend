@@ -18,7 +18,7 @@ const starRainbow = require('../images/parent/starRainbow.png');
 
 export default function Children(props) {
     updatePasswordWithApi = () => {
-        props.navigation.navigate('ChildProfile', { otherParam: 'Förmåner', extraTabInfo: 'offers' });
+        props.navigation.navigate('ChildProfile');
     };
     return (
         <View style={{backgroundColor:'#000037', flex:1, paddingTop:75, paddingLeft:14, paddingRight:14, position:'relative'}}>
