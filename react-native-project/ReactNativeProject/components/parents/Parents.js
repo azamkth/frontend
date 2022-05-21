@@ -2,7 +2,8 @@ import React from 'react';
 import { 
     View,
     StyleSheet,
-    Text
+    Text,
+    Image
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -10,6 +11,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Test from './Test';
 import Children from './Children';
+
+const bell = require('../images/parent/bell.png');
+const pacman = require('../images/parent/pacman.png');
+const wrench = require('../images/parent/wrench.png');
 
 
 const Tab = createBottomTabNavigator();
@@ -25,18 +30,20 @@ export default function Parents(props) {
                         backgroundColor: '#333755',
                     },
                     tabBarLabelStyle:{
-                        fontSize:12
+                        fontSize:12,
+                        paddingTop: 10,
                     },
                     tabBarIcon: ({ focused, color, size }) => {
                         let iconName;
                         if (route.name == 'Children') {
-                            iconName = focused ? 'home' : 'home';
+                            iconName = focused ? pacman : pacman;
                         } else if (route.name == 'Notifications') {
-                            iconName = focused ? 'shopping-bag' : 'shopping-bag';
+                            iconName = focused ? bell : bell;
                         } else if (route.name == 'Settings') {
-                            iconName = focused ? 'trophy' : 'trophy';
+                            iconName = focused ? wrench : wrench;
                         } 
-                        return <Icon name={iconName} size={18} color={color} style={{paddingTop:2}} />;            
+                        /* return <Icon name={iconName} size={18} color={color} style={{paddingTop:2}} />;             */
+                        return <Image style={{width:22, height:24}} source={iconName} />;
                     },
                 })}
                
