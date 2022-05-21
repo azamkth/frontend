@@ -18,40 +18,45 @@ export default function Parents(props) {
     return (
         <Tab.Navigator
                 screenOptions={({ route }) => ({
-                    tabBarActiveTintColor: '#000',
-                    tabBarInactiveTintColor: 'gray',
-                    style: {
-                        backgroundColor: '#F5F5F5',
+                    tabBarActiveTintColor: '#FFF',
+                    tabBarInactiveTintColor: '#FFF',
+                    tabBarStyle: {
+                        paddingTop: 10,
+                        backgroundColor: '#333755',
+                    },
+                    tabBarLabelStyle:{
+                        fontSize:12
                     },
                     tabBarIcon: ({ focused, color, size }) => {
                         let iconName;
-                        if (route.name == 'Uppdrag') {
+                        if (route.name == 'Children') {
                             iconName = focused ? 'home' : 'home';
-                        } else if (route.name == 'Köpta') {
+                        } else if (route.name == 'Notifications') {
                             iconName = focused ? 'shopping-bag' : 'shopping-bag';
-                        } else if (route.name == 'Vunna') {
+                        } else if (route.name == 'Settings') {
                             iconName = focused ? 'trophy' : 'trophy';
                         } 
-                        return <Icon name={iconName} size={20} color={color} />;            
+                        return <Icon name={iconName} size={18} color={color} style={{paddingTop:2}} />;            
                     },
                 })}
+               
             >
             <Tab.Screen
-                name="Uppdrag"
+                name="Children"
                 component={Children}
                 options={{
                     headerShown: false
                 }}
             />
             <Tab.Screen
-                name="Köpta"
+                name="Notifications"
                 component={Test}
                 options={{
                     headerShown: false
                 }}
             />
             <Tab.Screen
-                name="Vunna"
+                name="Settings"
                 component={Test}
                 options={{
                     headerShown: false
