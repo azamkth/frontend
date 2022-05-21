@@ -39,7 +39,7 @@ export default function Parents(props) {
                         } else if (route.name == 'Settings') {
                             iconName = focused ? wrench : wrench;
                         } 
-                        return <Image style={{width:22, height:24}} source={iconName} />;
+                        return <Image style={{width:22, height:20}} source={iconName} resizeMode="contain" />;
                     },
                 })}
                
