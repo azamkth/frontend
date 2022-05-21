@@ -5,9 +5,9 @@ import {
 } from 'react-native';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import ChildNavigationStack from './ChildNavigationStack';
 
 import Test from './Test';
-import Children from './Children';
 
 const bell = require('../images/parent/bell.png');
 const pacman = require('../images/parent/pacman.png');
@@ -46,7 +46,7 @@ export default function Parents(props) {
             >
             <Tab.Screen
                 name="Children"
-                component={Children}
+                component={ChildNavigationStack}
                 options={{
                     headerShown: false
                 }}

@@ -10,12 +10,16 @@ import {
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+
 const sxlImage = require('../images/parent/lucas.png');
 const bank = require('../images/parent/bank.png');
 const starRainbow = require('../images/parent/starRainbow.png');
 
 
 export default function Children(props) {
+    updatePasswordWithApi = () => {
+        props.navigation.navigate('ChildProfile', { otherParam: 'Förmåner', extraTabInfo: 'offers' });
+    };
     return (
         <View style={{backgroundColor:'#000037', flex:1, paddingTop:75, paddingLeft:14, paddingRight:14, position:'relative'}}>
             <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
@@ -98,7 +102,10 @@ export default function Children(props) {
             
             <View style={{flex:1, justifyContent:'flex-end', paddingBottom:95, position:'relative' }}>
                 <View style={{alignItems:'center', position:'relative'}}>
-                    <TouchableOpacity style={{width:39, height:39, backgroundColor:'#5050FF', justifyContent:'center', alignItems:'center', borderRadius:999}}>
+                    <TouchableOpacity 
+                        onPress={()=> updatePasswordWithApi()}
+                        style={{width:39, height:39, backgroundColor:'#5050FF', justifyContent:'center', alignItems:'center', borderRadius:999}}
+                    >
                         <Icon name={'plus'} size={20} color={'#fff'} />
                     </TouchableOpacity>
                     <View>
