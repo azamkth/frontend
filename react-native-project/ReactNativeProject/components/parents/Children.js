@@ -4,7 +4,8 @@ import {
     StyleSheet,
     SafeAreaView,
     Text,
-    Image
+    Image,
+    TouchableOpacity
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -15,7 +16,7 @@ const bank = require('../images/parent/bank.png');
 
 export default function Children(props) {
     return (
-        <View style={{backgroundColor:'#000037', flex:1, paddingTop:75, paddingLeft:14, paddingRight:14}}>
+        <View style={{backgroundColor:'#000037', flex:1, paddingTop:75, paddingLeft:14, paddingRight:14, position:'relative'}}>
             <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
                 <View style={{flexDirection:'row', alignItems:'center'}}>
                     <Text style={{color:'#fff', fontSize:32,fontWeight:'bold'}}>Lucas</Text>
@@ -90,6 +91,17 @@ export default function Children(props) {
                             <View style={[ {width:'80%', position:'absolute', height:7,zIndex: 3, borderRadius:8, backgroundColor:'#46E68C'}]}>
                             </View>    
                         </View>
+                    </View>
+                </View>
+            </View>
+            
+            <View style={{flex:1, justifyContent:'flex-end', paddingBottom:95 }}>
+                <View style={{alignItems:'center'}}>
+                    <TouchableOpacity style={{width:39, height:39, backgroundColor:'#5050FF', justifyContent:'center', alignItems:'center', borderRadius:999}}>
+                        <Icon name={'plus'} size={20} color={'#fff'} />
+                    </TouchableOpacity>
+                    <View>
+                        <Text style={{color:'#fff', fontSize:16,fontWeight:'bold', paddingTop:16}}>Add a child</Text>
                     </View>
                 </View>
             </View>
