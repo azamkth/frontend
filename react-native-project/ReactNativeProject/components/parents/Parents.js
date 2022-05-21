@@ -1,12 +1,9 @@
 import React from 'react';
 import { 
-    View,
     StyleSheet,
-    Text,
     Image
 } from 'react-native';
 
-import Icon from 'react-native-vector-icons/FontAwesome';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Test from './Test';
@@ -42,7 +39,6 @@ export default function Parents(props) {
                         } else if (route.name == 'Settings') {
                             iconName = focused ? wrench : wrench;
                         } 
-                        /* return <Icon name={iconName} size={18} color={color} style={{paddingTop:2}} />;             */
                         return <Image style={{width:22, height:24}} source={iconName} />;
                     },
                 })}

@@ -36,7 +36,7 @@ export default function Children(props) {
                         <Text style={{color:'#fff', fontSize:16,fontWeight:'bold'}}>Bank account</Text>
                     </View>
                     <View style={{flexDirection:'row'}}>
-                        <Text style={{color:'#fff', fontSize:12,fontWeight:'bold', paddingTop:5, paddingRight:2}}>€</Text>
+                        <Text style={{color:'#fff', fontSize:12,fontWeight:'bold',lineHeight: 20}}>€</Text>
                         <Text style={{color:'#fff', fontSize:30}}>140</Text>
                     </View>
                 </View>
