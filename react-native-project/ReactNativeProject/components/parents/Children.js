@@ -12,6 +12,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 const sxlImage = require('../images/parent/lucas.png');
 const bank = require('../images/parent/bank.png');
+const starRainbow = require('../images/parent/starRainbow.png');
 
 
 export default function Children(props) {
@@ -95,13 +96,19 @@ export default function Children(props) {
                 </View>
             </View>
             
-            <View style={{flex:1, justifyContent:'flex-end', paddingBottom:95 }}>
-                <View style={{alignItems:'center'}}>
+            <View style={{flex:1, justifyContent:'flex-end', paddingBottom:95, position:'relative' }}>
+                <View style={{alignItems:'center', position:'relative'}}>
                     <TouchableOpacity style={{width:39, height:39, backgroundColor:'#5050FF', justifyContent:'center', alignItems:'center', borderRadius:999}}>
                         <Icon name={'plus'} size={20} color={'#fff'} />
                     </TouchableOpacity>
                     <View>
                         <Text style={{color:'#fff', fontSize:16,fontWeight:'bold', paddingTop:16}}>Add a child</Text>
+                    </View>
+                    <View style={{position:'absolute', right:82, top:5}}>
+                        <Image
+                            style={{width:54, height:30}}
+                            source={starRainbow}
+                        />
                     </View>
                 </View>
             </View>
