@@ -16,7 +16,8 @@ const {width, height} = Dimensions.get('screen');
 
 import Dami1 from '../Dami1';   
 import Dami2 from '../Dami2';   
-import FinancialBadge from './FinancialBadge';   
+import FinancialBadge from './FinancialBadge';
+import SupperSkills from './SupperSkills';   
 
 const card1 = require('../images/profile/card1.png');
 const chevronLeft = require('../images/profile/chevron-left.png');
@@ -120,7 +121,7 @@ export default function ChildProfile(props) {
     updatePasswordWithApi = (testing) => {
         switch(testing) {
             case 'first' :
-                return <Dami1 />
+                return <SupperSkills />
             case 'second' : 
                 return <Dami2 />    
         }

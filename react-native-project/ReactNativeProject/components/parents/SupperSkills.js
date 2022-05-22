@@ -11,10 +11,10 @@ const planet1 = require('../images/profile/planet1.png');
 const planet2 = require('../images/profile/planet2.png');
 const piggybankLevel3 = require('../images/child/piggybank-level3.png');
 
-export default function FinancialBadge(props) {
+export default function SupperSkills(props) {
     return (
         <View style={{ marginTop:39}}>
-            <Text style={{fontSize:20, fontWeight:'bold', color:'#000037', paddingBottom:14}}>Financial badges</Text>
+            <Text style={{fontSize:20, fontWeight:'bold', color:'#000037', paddingBottom:14}}>SupperSkills Adventure</Text>
             <ScrollView showsHorizontalScrollIndicator={false} horizontal={true} 
                 >
                 <View style={{borderColor:'#000', marginRight:11, width:142, alignItems:'center'}}>
