@@ -7,7 +7,7 @@ import {
 
 export default function Dami2(props) {
     return (
-        <View>
+        <View style={{marginTop:40}}>
             <Text>Hello i am Testing2</Text>
         </View>    
     );

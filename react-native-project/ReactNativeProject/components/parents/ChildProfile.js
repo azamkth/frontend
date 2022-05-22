@@ -33,9 +33,9 @@ const components = {
     second: 'Second'
 }
 
-const data = Object.keys(components).map((i) => ({
-    key: i,
-    title: i,
+const data = Object.entries(components).map((i) => ({
+    key: i[0],
+    title: i[1],
     ref: React.createRef()
 }));
 
@@ -63,7 +63,6 @@ const Indicator = ({measures, scrollX}) => {
                 }]
             }}
         >
-
         </Animated.View>
     )
 }
@@ -100,7 +99,7 @@ const Tabs = ({data, scrollX, onItemPress}) => {
         <View style={{position:'absolute', width}}>
             <View 
                 ref={containerRef}
-                style={{justifyContent:'space-evenly', flexDirection:'row'}}>
+                style={{ flexDirection:'row'}}>
                 {data.map((item, index) => {
                     return(
                         <Tab key={item.key} item={item} ref={item.ref} onItemPress={() => onItemPress(index)} />
