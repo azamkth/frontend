@@ -1,15 +1,21 @@
 import React from 'react';
 import { 
+    findNodeHandle,
     View,
     StyleSheet,
     SafeAreaView,
     Text,
     Image,
     TouchableOpacity,
-    ImageBackground
+    ImageBackground,
+    Dimensions,
+    FlatList,
+    Animated
 } from 'react-native';
+const {width, height} = Dimensions.get('screen');
 
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Dami1 from '../Dami1';   
+import Dami2 from '../Dami2';   
 
 const card1 = require('../images/profile/card1.png');
 const chevronLeft = require('../images/profile/chevron-left.png');
@@ -22,8 +28,107 @@ const planet2 = require('../images/profile/planet2.png');
 const star = require('../images/profile/star.png');
 const wrench = require('../images/profile/wrench.png');
 
+const components = {
+    first: 'First',
+    second: 'Second'
+}
+
+const data = Object.keys(components).map((i) => ({
+    key: i,
+    title: i,
+    ref: React.createRef()
+}));
+
+const Indicator = ({measures, scrollX}) => {
+    const inputRange = data.map((_,i) => i * width);
+    const indicatorWidth = scrollX.interpolate({
+        inputRange,
+        outputRange: measures.map((measure)=> measure.width)
+    });
+    const translateX = scrollX.interpolate({
+        inputRange,
+        outputRange: measures.map((measure)=> measure.x)
+    });
+    return (
+        <Animated.View 
+            style={{
+                position:'absolute', 
+                height:4, 
+                width:indicatorWidth, 
+                bottom:-10, 
+                backgroundColor:'#000',
+                left:0,
+                transform:[{
+                    translateX
+                }]
+            }}
+        >
+
+        </Animated.View>
+    )
+}
+
+const Tab = React.forwardRef(({item, onItemPress}, ref) => {
+    return(
+        <TouchableOpacity onPress={onItemPress}>
+            <View ref={ref}>
+                <Text style={{color:'#000'}}>{item.title}</Text>
+            </View>
+        </TouchableOpacity>
+    )
+})
+const Tabs = ({data, scrollX, onItemPress}) => {
+    const [measures, setMmeasures] = React.useState([])
+    const containerRef = React.useRef();
+    React.useEffect(() =>{
+        let m = [];
+        data.forEach(item => {
+            item.ref.current.measureLayout(
+                containerRef.current,
+                (x, y, width, height) => {
+                    m.push({
+                        x, y, width, height
+                    });
+                    if(m.length === data.length){
+                        setMmeasures(m);
+                    }
+                });
+        })
+    }, [])
+
+    return(
+        <View style={{position:'absolute', width}}>
+            <View 
+                ref={containerRef}
+                style={{justifyContent:'space-evenly', flexDirection:'row'}}>
+                {data.map((item, index) => {
+                    return(
+                        <Tab key={item.key} item={item} ref={item.ref} onItemPress={() => onItemPress(index)} />
+                    )        
+                })}
+            </View>
+            {measures.length > 0 && <Indicator measures={measures} scrollX={scrollX} />}
+        </View>
+    )
+}
 
 export default function ChildProfile(props) {
+    const scrollX = React.useRef(new Animated.Value(0)).current;
+    const ref = React.useRef();
+    updatePasswordWithApi = (testing) => {
+        switch(testing) {
+            case 'first' :
+                return <Dami1 />
+            case 'second' : 
+                return <Dami2 />    
+        }
+    };
+    const onItemPress = React.useCallback(itemIndex => {
+        ref?.current?.scrollToOffset({
+            offset:itemIndex * width,
+        })
+    })
+
     return (
         <View style={{}}>
             <ImageBackground
@@ -68,6 +173,28 @@ export default function ChildProfile(props) {
                     </View>
                 </View>
             </ImageBackground>
+            <View style={{position:'relative'}}>
+                <Animated.FlatList
+                    ref={ref}
+                    data={data}
+                    keyExtractor={item=> item.key}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    pagingEnabled
+                    onScroll={Animated.event(
+                        [{nativeEvent: {contentOffset:{x: scrollX}}}],
+                        {useNativeDriver:false}
+                    )}
+                    bounces={false}
+                    renderItem={({item}) => {
+                        return <View style={{width, height}}>
+                                {updatePasswordWithApi(item.key)}
+                            </View>        
+                    }}    
+                />
+                <Tabs scrollX={scrollX} data={data} onItemPress={onItemPress} />
+            </View>
+            
         </View>    
     );
 }
