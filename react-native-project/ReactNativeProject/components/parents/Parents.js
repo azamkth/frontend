@@ -1,8 +1,12 @@
 import React from 'react';
 import { 
     StyleSheet,
+    View,
+    Text,
     Image
 } from 'react-native';
+
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ChildNavigationStack from './ChildNavigationStack';
@@ -20,6 +24,7 @@ export default function Parents(props) {
     return (
         <Tab.Navigator
                 screenOptions={({ route }) => ({
+                    tabBarShowLabel:false,
                     tabBarActiveTintColor: '#FFF',
                     tabBarInactiveTintColor: '#FFF',
                     tabBarStyle: {
@@ -31,15 +36,29 @@ export default function Parents(props) {
                         paddingTop: 10,
                     },
                     tabBarIcon: ({ focused, color, size }) => {
-                        let iconName;
+                        let iconName, compoentName, foucedIconColor;
                         if (route.name == 'Children') {
                             iconName = focused ? pacman : pacman;
+                            foucedIconColor = focused ? '#fff' : '#333755';
+                            compoentName = 'Children';
                         } else if (route.name == 'Notifications') {
                             iconName = focused ? bell : bell;
+                            foucedIconColor = focused ? '#fff' : '#333755';
+                            compoentName = 'Notifications';
                         } else if (route.name == 'Settings') {
+                            foucedIconColor = focused ? '#fff' : '#333755';
                             iconName = focused ? wrench : wrench;
+                            compoentName = 'Settings';
                         } 
-                        return <Image style={{width:22, height:20}} source={iconName} resizeMode="contain" />;
+                        return(
+                            <View style={{justifyContent:'center', alignItems:'center', paddingTop:10}}>
+                                 <Image style={{width:22, height:20}} source={iconName} resizeMode="contain" />      
+                                 <Text style={{color:'#fff', fontSize:12,paddingBottom:5, paddingTop:5}}>{compoentName}</Text>
+                                 <Icon name="circle" size={8} color={foucedIconColor} />
+                            </View>
+                            
+                        ) 
+                            
                     },
                 })}
                
