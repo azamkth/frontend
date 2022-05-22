@@ -29,8 +29,9 @@ const star = require('../images/profile/star.png');
 const wrench = require('../images/profile/wrench.png');
 
 const components = {
-    first: 'First',
-    second: 'Second'
+    first: 'Superskills',
+    second: 'Mission',
+    third: 'Statistics'
 }
 
 const data = Object.entries(components).map((i) => ({
@@ -53,10 +54,10 @@ const Indicator = ({measures, scrollX}) => {
         <Animated.View 
             style={{
                 position:'absolute', 
-                height:4, 
+                height:2, 
                 width:indicatorWidth, 
-                bottom:-10, 
-                backgroundColor:'#000',
+                bottom:-1, 
+                backgroundColor:'#000037',
                 left:0,
                 transform:[{
                     translateX
@@ -67,11 +68,12 @@ const Indicator = ({measures, scrollX}) => {
     )
 }
 
-const Tab = React.forwardRef(({item, onItemPress}, ref) => {
+const Tab = React.forwardRef(({item, measureLength, onItemPress}, ref) => {
+    console.log(measureLength);
     return(
-        <TouchableOpacity onPress={onItemPress}>
+        <TouchableOpacity onPress={onItemPress} style={{paddingRight:20}}>
             <View ref={ref}>
-                <Text style={{color:'#000'}}>{item.title}</Text>
+                <Text style={[measureLength>0?{color:'#000037'}:{color:'#767687'}, {fontSize:16, fontWeight:'500'}]}>{item.title}</Text>
             </View>
         </TouchableOpacity>
     )
@@ -99,10 +101,10 @@ const Tabs = ({data, scrollX, onItemPress}) => {
         <View style={{position:'absolute', width}}>
             <View 
                 ref={containerRef}
-                style={{ flexDirection:'row'}}>
+                style={{flexDirection:'row'}}>
                 {data.map((item, index) => {
                     return(
-                        <Tab key={item.key} item={item} ref={item.ref} onItemPress={() => onItemPress(index)} />
+                        <Tab key={item.key} item={item} ref={item.ref} measureLength={measures.length} onItemPress={() => onItemPress(index)} />
                     )        
                 })}
             </View>
@@ -172,7 +174,7 @@ export default function ChildProfile(props) {
                     </View>
                 </View>
             </ImageBackground>
-            <View style={{position:'relative'}}>
+            <View style={{position:'relative', marginTop:15, marginLeft:15}}>
                 <Animated.FlatList
                     ref={ref}
                     data={data}
