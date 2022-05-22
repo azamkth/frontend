@@ -16,6 +16,7 @@ const {width, height} = Dimensions.get('screen');
 
 import Dami1 from '../Dami1';   
 import Dami2 from '../Dami2';   
+import FinancialBadge from './FinancialBadge';   
 
 const card1 = require('../images/profile/card1.png');
 const chevronLeft = require('../images/profile/chevron-left.png');
@@ -188,12 +189,15 @@ export default function ChildProfile(props) {
                     )}
                     bounces={false}
                     renderItem={({item}) => {
-                        return <View style={{width, height}}>
+                        return <View style={{width}}>
                                 {updatePasswordWithApi(item.key)}
                             </View>        
                     }}    
                 />
                 <Tabs scrollX={scrollX} data={data} onItemPress={onItemPress} />
+            </View>
+            <View style={{marginTop:12}}>
+                <FinancialBadge />
             </View>
             
         </View>    
