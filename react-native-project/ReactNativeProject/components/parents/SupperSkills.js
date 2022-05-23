@@ -9,7 +9,6 @@ import {
 import {globalStyles} from '../styles/global';
 import {Colors} from '../styles/colors';
 
-
 const planet1 = require('../images/profile/planet1.png');
 const planet2 = require('../images/profile/planet2.png');
 
@@ -71,7 +70,6 @@ export default function SupperSkills() {
                 </View>    
             </ScrollView>    
         </View>
-        
     );
 }
 

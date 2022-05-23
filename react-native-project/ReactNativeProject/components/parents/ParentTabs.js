@@ -6,18 +6,16 @@ import {
     StyleSheet
 } from 'react-native';
 
-const white = '#ffffff';
-const darkGrey = '#333755';
-
-const bell = require('../images/parent/bell.png');
-const wrench = require('../images/parent/wrench.png');
-const pacman = require('../images/parent/pacman.png');
-
+import {Colors} from '../styles/colors';
 import Dammy from '../common/Dammy';
 import ChildNavigationStack from './ChildNavigationStack';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+const bell = require('../images/parent/bell.png');
+const wrench = require('../images/parent/wrench.png');
+const pacman = require('../images/parent/pacman.png');
 
 const Tab = createBottomTabNavigator();
 
@@ -26,11 +24,11 @@ export default function Parents() {
         <Tab.Navigator
                 screenOptions={({ route }) => ({
                     tabBarShowLabel:false,
-                    tabBarActiveTintColor: white,
-                    tabBarInactiveTintColor: white,
+                    tabBarActiveTintColor: Colors.neutral100,
+                    tabBarInactiveTintColor: Colors.neutral100,
                     tabBarStyle: {
                         paddingTop: 10,
-                        backgroundColor: darkGrey,
+                        backgroundColor: Colors.primary300,
                     },
                     tabBarLabelStyle:{
                         paddingTop: 10,
@@ -39,14 +37,14 @@ export default function Parents() {
                         let iconName, compoentName, foucedIconColor;
                         if (route.name == 'Children') {
                             iconName = focused ? pacman : pacman;
-                            foucedIconColor = focused ? white : darkGrey;
+                            foucedIconColor = focused ? Colors.neutral100 : Colors.primary300;
                             compoentName = 'Children';
                         } else if (route.name == 'Notifications') {
                             iconName = focused ? bell : bell;
-                            foucedIconColor = focused ? white : darkGrey;
+                            foucedIconColor = focused ? Colors.neutral100 : Colors.primary300;
                             compoentName = 'Notifications';
                         } else if (route.name == 'Settings') {
-                            foucedIconColor = focused ? white : darkGrey;
+                            foucedIconColor = focused ? Colors.neutral100 : Colors.primary300;
                             iconName = focused ? wrench : wrench;
                             compoentName = 'Settings';
                         } 
@@ -93,7 +91,7 @@ const styles = StyleSheet.create({
         justifyContent:'center', 
     },
     tabBarItemLabel: {
-        color: white, 
+        color: Colors.neutral100, 
         fontSize:12,
         paddingTop:5,
         paddingBottom:5, 

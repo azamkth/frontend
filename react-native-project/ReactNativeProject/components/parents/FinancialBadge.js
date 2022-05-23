@@ -1,7 +1,6 @@
 import React from 'react';
 import { 
     View,
-    StyleSheet,
     Text,
     ScrollView,
     Image
@@ -9,6 +8,7 @@ import {
 
 import {Colors} from '../styles/colors';
 import {globalStyles} from '../styles/global';
+
 const card1 = require('../images/profile/card1.png');
 const lawnMower = require('../images/profile/planet2.png');
 
@@ -71,6 +71,5 @@ export default function FinancialBadge() {
                 </View>    
             </ScrollView>    
         </View>
-        
     );
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { 
     View,
-    StyleSheet,
     Text,
     Image,
     TouchableOpacity
@@ -10,10 +9,10 @@ import {
 import {Colors} from '../styles/colors';
 import {globalStyles} from '../styles/global';
 
-const lucas = require('../images/parent/lucas.png');
 const bank = require('../images/parent/bank.png');
-const chevronRight = require('../images/child/chevron-right.png');
+const lucas = require('../images/parent/lucas.png');
 const starRainbow = require('../images/parent/starRainbow.png');
+const chevronRight = require('../images/child/chevron-right.png');
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 

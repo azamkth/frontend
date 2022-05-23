@@ -10,13 +10,13 @@ import {
     Dimensions,
     Animated
 } from 'react-native';
-const {width, height} = Dimensions.get('screen');
 
-import {globalStyles} from '../styles/global';
 import Dammy from '../common/Dammy';   
 import FinancialBadge from './FinancialBadge';
+import {globalStyles} from '../styles/global';
 import SupperSkills from './SupperSkills';   
 
+const {width, height} = Dimensions.get('screen');
 const chevronLeft = require('../images/profile/chevron-left.png');
 const cyberspace = require('../images/profile/cyberspace.png');
 const diamond = require('../images/profile/diamond.png');
@@ -24,18 +24,20 @@ const lucas = require('../images/profile/lucas.png');
 const star = require('../images/profile/star.png');
 const wrench = require('../images/profile/wrench.png');
 
-const components = {
+const tabViewComponents = {
     first: 'Superskills',
     second: 'Mission',
     third: 'Statistics'
 }
 
-const data = Object.entries(components).map((i) => ({
+const data = Object.entries(tabViewComponents).map((i) => ({
     key: i[0],
     title: i[1],
     ref: React.createRef()
 }));
 
+
+/* Tabbar indicator */
 const Indicator = ({measures, scrollX}) => {
     const inputRange = data.map((_,i) => i * width);
     const indicatorWidth = scrollX.interpolate({
@@ -64,16 +66,18 @@ const Indicator = ({measures, scrollX}) => {
     )
 }
 
-const Tab = React.forwardRef(({item, measureLength, onItemPress}, ref) => {
+/* Tabbar item Tab */
+const Tab = React.forwardRef(({item, onItemPress}, ref) => {
     return(
         <TouchableOpacity onPress={onItemPress} style={{paddingRight:20}}>
             <View ref={ref}>
-                <Text style={[measureLength>0?{color:'#000037'}:{color:'#767687'}, {fontSize:16, fontWeight:'500'}]}>{item.title}</Text>
+                <Text style={[{color:'#000037',fontSize:16, fontWeight:'500'}]}>{item.title}</Text>
             </View>
         </TouchableOpacity>
     )
 })
 
+/* Tabbar Tabs */
 const Tabs = ({data, scrollX, onItemPress}) => {
     const [measures, setMmeasures] = React.useState([])
     const containerRef = React.useRef();
@@ -100,7 +104,7 @@ const Tabs = ({data, scrollX, onItemPress}) => {
                 style={{flexDirection:'row'}}>
                 {data.map((item, index) => {
                     return(
-                        <Tab key={item.key} item={item} ref={item.ref} measureLength={measures.length} onItemPress={() => onItemPress(index)} />
+                        <Tab key={item.key} item={item} ref={item.ref}  onItemPress={() => onItemPress(index)} />
                     )        
                 })}
             </View>
