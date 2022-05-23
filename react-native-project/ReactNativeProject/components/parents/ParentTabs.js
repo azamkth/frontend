@@ -1,35 +1,35 @@
 import React from 'react';
 import { 
-    StyleSheet,
     View,
     Text,
     Image
 } from 'react-native';
 
-import Icon from 'react-native-vector-icons/FontAwesome';
-
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
-import ChildNavigationStack from './ChildNavigationStack';
-import Dammy from '../common/Dammy';
+const white = '#ffffff';
+const darkGrey = '#333755';
 
 const bell = require('../images/parent/bell.png');
-const pacman = require('../images/parent/pacman.png');
 const wrench = require('../images/parent/wrench.png');
+const pacman = require('../images/parent/pacman.png');
 
+import Dammy from '../common/Dammy';
+import ChildNavigationStack from './ChildNavigationStack';
+
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();
 
-export default function Parents(props) {
+export default function Parents() {
     return (
         <Tab.Navigator
                 screenOptions={({ route }) => ({
                     tabBarShowLabel:false,
-                    tabBarActiveTintColor: '#FFF',
-                    tabBarInactiveTintColor: '#FFF',
+                    tabBarActiveTintColor: white,
+                    tabBarInactiveTintColor: white,
                     tabBarStyle: {
                         paddingTop: 10,
-                        backgroundColor: '#333755',
+                        backgroundColor: darkGrey,
                     },
                     tabBarLabelStyle:{
                         paddingTop: 10,
@@ -38,14 +38,14 @@ export default function Parents(props) {
                         let iconName, compoentName, foucedIconColor;
                         if (route.name == 'Children') {
                             iconName = focused ? pacman : pacman;
-                            foucedIconColor = focused ? '#fff' : '#333755';
+                            foucedIconColor = focused ? white : darkGrey;
                             compoentName = 'Children';
                         } else if (route.name == 'Notifications') {
                             iconName = focused ? bell : bell;
-                            foucedIconColor = focused ? '#fff' : '#333755';
+                            foucedIconColor = focused ? white : darkGrey;
                             compoentName = 'Notifications';
                         } else if (route.name == 'Settings') {
-                            foucedIconColor = focused ? '#fff' : '#333755';
+                            foucedIconColor = focused ? white : darkGrey;
                             iconName = focused ? wrench : wrench;
                             compoentName = 'Settings';
                         } 
@@ -55,7 +55,6 @@ export default function Parents(props) {
                                  <Text style={{color:'#fff', fontSize:12,paddingBottom:5, paddingTop:5}}>{compoentName}</Text>
                                  <Icon name="circle" size={8} color={foucedIconColor} />
                             </View>
-                            
                         ) 
                     },
                 })}
