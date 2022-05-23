@@ -16,7 +16,7 @@ const user = require('../images/child/user.png');
 
 const Tab = createBottomTabNavigator();
 
-export default function Children(props) {
+export default function ChildTabs(props) {
     return (
         <Tab.Navigator
                 screenOptions={({ route }) => ({

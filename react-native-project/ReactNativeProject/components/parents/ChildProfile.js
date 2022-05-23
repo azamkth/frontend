@@ -3,19 +3,16 @@ import {
     findNodeHandle,
     View,
     StyleSheet,
-    SafeAreaView,
     Text,
     Image,
     TouchableOpacity,
     ImageBackground,
     Dimensions,
-    FlatList,
     Animated
 } from 'react-native';
 const {width, height} = Dimensions.get('screen');
 
-import Dami1 from '../Dami1';   
-import Dami2 from '../Dami2';   
+import Dammy from '../common/Dammy';   
 import FinancialBadge from './FinancialBadge';
 import SupperSkills from './SupperSkills';   
 
@@ -71,7 +68,6 @@ const Indicator = ({measures, scrollX}) => {
 }
 
 const Tab = React.forwardRef(({item, measureLength, onItemPress}, ref) => {
-    console.log(measureLength);
     return(
         <TouchableOpacity onPress={onItemPress} style={{paddingRight:20}}>
             <View ref={ref}>
@@ -80,6 +76,7 @@ const Tab = React.forwardRef(({item, measureLength, onItemPress}, ref) => {
         </TouchableOpacity>
     )
 })
+
 const Tabs = ({data, scrollX, onItemPress}) => {
     const [measures, setMmeasures] = React.useState([])
     const containerRef = React.useRef();
@@ -118,14 +115,16 @@ const Tabs = ({data, scrollX, onItemPress}) => {
 export default function ChildProfile(props) {
     const scrollX = React.useRef(new Animated.Value(0)).current;
     const ref = React.useRef();
-    updatePasswordWithApi = (testing) => {
-        switch(testing) {
+    
+    renderItemComponent = (itemKey) => {
+        switch(itemKey) {
             case 'first' :
                 return <SupperSkills />
             case 'second' : 
-                return <Dami2 />    
+                return <Dammy />    
         }
     };
+
     const onItemPress = React.useCallback(itemIndex => {
         ref?.current?.scrollToOffset({
             offset:itemIndex * width,
@@ -191,7 +190,7 @@ export default function ChildProfile(props) {
                     bounces={false}
                     renderItem={({item}) => {
                         return <View style={{width}}>
-                                {updatePasswordWithApi(item.key)}
+                                {renderItemComponent(item.key)}
                             </View>        
                     }}    
                 />
@@ -200,7 +199,6 @@ export default function ChildProfile(props) {
             <View style={{marginTop:12}}>
                 <FinancialBadge />
             </View>
-            
         </View>    
     );
 }

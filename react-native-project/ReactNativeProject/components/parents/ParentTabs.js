@@ -9,9 +9,9 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import ChildNavigationStack from './ChildNavigationStack';
 
-import Test from './Test';
+import ChildNavigationStack from './ChildNavigationStack';
+import Dammy from '../common/Dammy';
 
 const bell = require('../images/parent/bell.png');
 const pacman = require('../images/parent/pacman.png');
@@ -72,14 +72,14 @@ export default function Parents(props) {
             />
             <Tab.Screen
                 name="Notifications"
-                component={Test}
+                component={Dammy}
                 options={{
                     headerShown: false
                 }}
             />
             <Tab.Screen
                 name="Settings"
-                component={Test}
+                component={Dammy}
                 options={{
                     headerShown: false
                 }}

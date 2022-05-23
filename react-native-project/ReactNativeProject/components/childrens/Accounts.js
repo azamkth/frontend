@@ -9,8 +9,6 @@ import {
     ImageBackground
 } from 'react-native';
 
-import Icon from 'react-native-vector-icons/FontAwesome';
-
 const cyberspaceFull = require('../images/child/cyberspace-full.png');
 const chevronRight = require('../images/child/chevron-right.png');
 const piggybankLevel3 = require('../images/child/piggybank-level3.png');

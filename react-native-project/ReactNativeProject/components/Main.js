@@ -11,7 +11,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import ParentTabs from './parents/ParentTabs';
-import Children from './childrens/Children';
+import ChildTabs from './childrens/ChildTabs';
 
 function HomeScreen(props) {
     return (
@@ -23,7 +23,7 @@ function HomeScreen(props) {
                 <Text style={{color:'#000'}}>Parents</Text>
             </TouchableOpacity>
             <TouchableOpacity 
-                onPress={() => props.navigation.navigate('Children')}
+                onPress={() => props.navigation.navigate('ChildTabs')}
             >
                 <Text style={{color:'#000'}}>Children</Text>
             </TouchableOpacity>
@@ -48,8 +48,8 @@ export default function Main() {
                     options={{ headerShown: false }}
                 />
                 <Stack.Screen
-                    name="Children"
-                    component={Children}
+                    name="ChildTabs"
+                    component={ChildTabs}
                     options={{ headerShown: false }}
                 />
             </Stack.Navigator>

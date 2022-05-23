@@ -5,7 +5,7 @@ import {
     Text
 } from 'react-native';
 
-export default function Dami(props) {
+export default function Dammy(props) {
     return (
         <View style={{marginTop:40}}>
             <Text>Hello i am Testing</Text>
