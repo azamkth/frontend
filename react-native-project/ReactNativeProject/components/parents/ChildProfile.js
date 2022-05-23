@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 const {width, height} = Dimensions.get('screen');
 
+import {globalStyles} from '../styles/global';
 import Dammy from '../common/Dammy';   
 import FinancialBadge from './FinancialBadge';
 import SupperSkills from './SupperSkills';   
@@ -97,7 +98,7 @@ const Tabs = ({data, scrollX, onItemPress}) => {
     }, [])
 
     return(
-        <View style={{position:'absolute', width}}>
+        <View style={{position:'absolute', width, marginLeft:13}}>
             <View 
                 ref={containerRef}
                 style={{flexDirection:'row'}}>
@@ -140,16 +141,17 @@ export default function ChildProfile(props) {
             >
                 <TouchableOpacity
                     style={{paddingLeft:15, marginTop:54}}
+                    onPress={() => props.navigation.pop()}
                 >
                     <Image style={{width:12, height:12}} source={chevronLeft} />
                 </TouchableOpacity>
                 
                 <View style={{paddingLeft:15, paddingRight:15, paddingTop:24}}>
-                    <View style={[styles.flexRow, styles.justifyBetween]}>
+                    <View style={[globalStyles.flexRow, globalStyles.justifyBetween]}>
                         <View>
-                            <Text style={[styles.textNeutral100, styles.fontBold,{fontSize:28}]}>Lucas</Text>
+                            <Text style={[globalStyles.textNeutral100, globalStyles.fontBold,{fontSize:28}]}>Lucas</Text>
                         </View>
-                        <View style={[styles.flexRow, styles.itemsCenter,{marginTop:3}]}>
+                        <View style={[globalStyles.flexRow, globalStyles.itemsCenter,{marginTop:3}]}>
                             <Image
                                 style={{width:32, height:32}}
                                 source={lucas}
@@ -157,25 +159,25 @@ export default function ChildProfile(props) {
                             <Image style={{width:13, height:13,  marginLeft:12}} source={wrench} />
                         </View>
                     </View>
-                    <View style={[styles.flexRow, styles.itemsCenter, {marginTop:7}]}>
+                    <View style={[globalStyles.flexRow, globalStyles.itemsCenter, {marginTop:7}]}>
                         <Image style={{width:17, height:17, marginRight:7}} source={diamond} resizeMode="contain" />
-                        <Text style={[styles.textPrimary600,styles.textXl, {paddingRight:2}]}>50 XP</Text>
+                        <Text style={[globalStyles.textPrimary600,globalStyles.textXl, {paddingRight:2}]}>50 XP</Text>
                         <Image style={{width:17, height:17, marginRight:7, marginLeft:7}} source={star} resizeMode="contain" />
-                        <Text style={[styles.textPrimary600,styles.textXl]}>Lvl 1</Text>
+                        <Text style={[globalStyles.textPrimary600,globalStyles.textXl]}>Lvl 1</Text>
                     </View>
-                    <View style={[styles.flexRow, styles.justifyBetween, {marginTop:21}]}>
-                        <Text style={[styles.textNeutral100,styles.textXl,{paddingRight:2}]}>50 XP needed to next level!</Text>
-                        <Text style={[styles.textPrimary600,styles.textXl]}>Lvl 2</Text>
+                    <View style={[globalStyles.flexRow, globalStyles.justifyBetween, {marginTop:21}]}>
+                        <Text style={[globalStyles.textNeutral100,globalStyles.textXl,{paddingRight:2}]}>50 XP needed to next level!</Text>
+                        <Text style={[globalStyles.textPrimary600,globalStyles.textXl]}>Lvl 2</Text>
                     </View>
                     <View style={{ position:'relative', marginTop:7}}>
-                        <View style={[styles.progressBarWrapper,{height:13}]}>
-                            <View style={[styles.progressBar,{width:'80%', height:13}]}>
+                        <View style={[globalStyles.progressBarWrapper,{height:13}]}>
+                            <View style={[globalStyles.progressBar,{width:'80%', height:13}]}>
                             </View>    
                         </View>
                     </View>
                 </View>
             </ImageBackground>
-            <View style={{position:'relative', marginTop:15, marginLeft:15}}>
+            <View style={{position:'relative', marginTop:15}}>
                 <Animated.FlatList
                     ref={ref}
                     data={data}
@@ -202,106 +204,3 @@ export default function ChildProfile(props) {
         </View>    
     );
 }
-const neutral100 = '#ffffff';
-const primary100  = '#000037';
-const primary200  = '#262652';
-const primary300  = '#333755';
-const primary400  = '#4C4C73';
-const primary500  = '#9B9BAA';
-const primary600  = '#C8C8D4';
-
-const primary700  =  '#5050FF';
-const green100  =  '#46E68C';
-
-const styles = StyleSheet.create({
-    container: {
-        flex:1, 
-        position:'relative',
-        paddingTop:75, 
-        paddingLeft:14, 
-        paddingRight:14, 
-        backgroundColor:primary100, 
-    },
-    flexRow: {
-        flexDirection:'row', 
-    },
-    flexCol: {
-        flexDirection:'column', 
-    },
-    justifyBetween: {
-        justifyContent:'space-between',
-    },
-    justifyCenter: {
-        justifyContent:'center',
-    },
-    justifyEnd: {
-        justifyContent:'flex-end',
-    },
-    itemsCenter:{
-        alignItems:'center'
-    },
-    heading:{
-        color:neutral100, 
-        fontSize:32,
-        fontWeight:'bold'
-    },
-    greyBox: {
-        paddingLeft:13, 
-        paddingRight:13, 
-        backgroundColor:primary200, 
-        borderRadius:15, 
-        paddingTop:13, 
-        paddingBottom:12
-    },
-    textPrimary200: {
-        color: primary200,
-    },
-    textPrimary400: {
-        color: primary500,
-    },
-    textPrimary600: {
-        color: primary600,
-    },
-    textPrimary500: {
-        color: primary500,
-    },
-    textNeutral100: {
-        color: neutral100,
-    },
-    fontBold: {
-        fontWeight:'bold'
-    },
-    fontMedium: {
-        fontWeight:500
-    },
-    textBase: {
-        fontSize:12
-    },
-    textLg: {
-        fontSize:14
-    },
-    textXl: {
-        fontSize:16
-    },
-    text2Xl: {
-        fontSize:32
-    },
-    progressBarWrapper:{
-        borderColor:'#4C4C73', 
-        backgroundColor:'#4C4C73', 
-        height:7, 
-        borderRadius:8
-
-    },
-    progressBar:{
-        width:'0%', 
-        position:'absolute', 
-        height:7,
-        zIndex: 3, 
-        borderRadius:8, 
-        backgroundColor:green100
-    },
-
-    
-    
-});
