@@ -32,7 +32,6 @@ export default function Parents(props) {
                         backgroundColor: '#333755',
                     },
                     tabBarLabelStyle:{
-                        fontSize:12,
                         paddingTop: 10,
                     },
                     tabBarIcon: ({ focused, color, size }) => {
@@ -58,7 +57,6 @@ export default function Parents(props) {
                             </View>
                             
                         ) 
-                            
                     },
                 })}
                

@@ -8,28 +8,28 @@ import {
  
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 import ParentTabs from './parents/ParentTabs';
 import ChildTabs from './childrens/ChildTabs';
 
 function HomeScreen(props) {
     return (
-        <SafeAreaView>
-            <TouchableOpacity 
-                onPress={() => props.navigation.navigate('ParentTabs')}
-            >
-                <Icon name="rocket" size={30} color="#900" />
-                <Text style={{color:'#000'}}>Parents</Text>
-            </TouchableOpacity>
-            <TouchableOpacity 
-                onPress={() => props.navigation.navigate('ChildTabs')}
-            >
-                <Text style={{color:'#000'}}>Children</Text>
-            </TouchableOpacity>
-        </SafeAreaView>
+        <View>
+            <SafeAreaView>
+                <TouchableOpacity 
+                    onPress={() => props.navigation.navigate('ParentTabs')}
+                >
+                    <Text style={{color:'#000'}}>Parents</Text>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                    onPress={() => props.navigation.navigate('ChildTabs')}
+                >
+                    <Text style={{color:'#000'}}>Children</Text>
+                </TouchableOpacity>
+            </SafeAreaView>
+        </View>
     );
-  }
+}
 
 const Stack = createNativeStackNavigator();
  
