@@ -2,7 +2,8 @@ import React from 'react';
 import { 
     View,
     Text,
-    Image
+    Image,
+    StyleSheet
 } from 'react-native';
 
 const white = '#ffffff';
@@ -50,9 +51,9 @@ export default function Parents() {
                             compoentName = 'Settings';
                         } 
                         return(
-                            <View style={{justifyContent:'center', alignItems:'center', paddingTop:10}}>
+                            <View style={styles.tabBarItem}>
                                  <Image style={{width:22, height:20}} source={iconName} resizeMode="contain" />      
-                                 <Text style={{color:'#fff', fontSize:12,paddingBottom:5, paddingTop:5}}>{compoentName}</Text>
+                                 <Text style={styles.tabBarItemLabel}>{compoentName}</Text>
                                  <Icon name="circle" size={8} color={foucedIconColor} />
                             </View>
                         ) 
@@ -84,3 +85,17 @@ export default function Parents() {
         </Tab.Navigator>
     );
 }
+
+const styles = StyleSheet.create({
+    tabBarItem: {
+        paddingTop:10,
+        alignItems:'center', 
+        justifyContent:'center', 
+    },
+    tabBarItemLabel: {
+        color: white, 
+        fontSize:12,
+        paddingTop:5,
+        paddingBottom:5, 
+    },
+});
