@@ -17,14 +17,10 @@ import Dammy from '../common/Dammy';
 import FinancialBadge from './FinancialBadge';
 import SupperSkills from './SupperSkills';   
 
-const card1 = require('../images/profile/card1.png');
 const chevronLeft = require('../images/profile/chevron-left.png');
 const cyberspace = require('../images/profile/cyberspace.png');
 const diamond = require('../images/profile/diamond.png');
-const lawnMower = require('../images/profile/lawnMower.png');
 const lucas = require('../images/profile/lucas.png');
-const planet1 = require('../images/profile/planet1.png');
-const planet2 = require('../images/profile/planet2.png');
 const star = require('../images/profile/star.png');
 const wrench = require('../images/profile/wrench.png');
 
