@@ -23,47 +23,46 @@ const Tab = createBottomTabNavigator();
 export default function ChildTabs() {
     return (
         <Tab.Navigator
-                screenOptions={({ route }) => ({
-                    tabBarShowLabel:false,
-                    tabBarActiveTintColor: Colors.neutral100,
-                    tabBarInactiveTintColor: Colors.neutral100,
-                    tabBarStyle: {
-                        paddingTop: 10,
-                        backgroundColor: Colors.primary300,
-                    },
-                    tabBarLabelStyle:{
-                        paddingTop: 10,
-                    },
-                    tabBarIcon: ({ focused, color, size }) => {
-                        let iconName, compoentName, foucedIconColor;
-                        if (route.name == 'Accounts') {
-                            iconName = focused ? planet : planet;
-                            foucedIconColor = focused ? Colors.neutral100 : Colors.primary300;
-                            compoentName = 'Accounts';
-                        } else if (route.name == 'Earn') {
-                            iconName = focused ? dumbbell : dumbbell;
-                            foucedIconColor = focused ? Colors.neutral100 : Colors.primary300;
-                            compoentName = 'Earn';
-                        } else if (route.name == 'Goal') {
-                            iconName = focused ? rocket : rocket;
-                            foucedIconColor = focused ? Colors.neutral100 : Colors.primary300;
-                            compoentName = 'Goal';
-                        } else if (route.name == 'Profile') {
-                            iconName = focused ? user : user;
-                            foucedIconColor = focused ? Colors.neutral100 : Colors.primary300;
-                            compoentName = 'Profile';
-                        }
-                        return(
-                            <View style={styles.tabBarItem}>
-                                 <Image style={{width:22, height:19}} source={iconName} resizeMode="contain" />      
-                                 <Text style={styles.tabBarItemLabel}>{compoentName}</Text>
-                                 <Icon name="circle" size={8} color={foucedIconColor} />
-                            </View>
-                        )
-                    },
-                })}
-               
-            >
+            screenOptions={({ route }) => ({
+                tabBarShowLabel:false,
+                tabBarActiveTintColor: Colors.neutral100,
+                tabBarInactiveTintColor: Colors.neutral100,
+                tabBarStyle: {
+                    paddingTop: 10,
+                    backgroundColor: Colors.primary300,
+                },
+                tabBarLabelStyle:{
+                    paddingTop: 10,
+                },
+                tabBarIcon: ({ focused, color, size }) => {
+                    let iconName, compoentName, foucedIconColor;
+                    if (route.name == 'Accounts') {
+                        iconName = focused ? planet : planet;
+                        foucedIconColor = focused ? Colors.neutral100 : Colors.primary300;
+                        compoentName = 'Accounts';
+                    } else if (route.name == 'Earn') {
+                        iconName = focused ? dumbbell : dumbbell;
+                        foucedIconColor = focused ? Colors.neutral100 : Colors.primary300;
+                        compoentName = 'Earn';
+                    } else if (route.name == 'Goal') {
+                        iconName = focused ? rocket : rocket;
+                        foucedIconColor = focused ? Colors.neutral100 : Colors.primary300;
+                        compoentName = 'Goal';
+                    } else if (route.name == 'Profile') {
+                        iconName = focused ? user : user;
+                        foucedIconColor = focused ? Colors.neutral100 : Colors.primary300;
+                        compoentName = 'Profile';
+                    }
+                    return(
+                        <View style={styles.tabBarItem}>
+                            <Image style={{width:22, height:19}} source={iconName} resizeMode="contain" />      
+                            <Text style={styles.tabBarItemLabel}>{compoentName}</Text>
+                            <Icon name="circle" size={8} color={foucedIconColor} />
+                        </View>
+                    )
+                },
+            })}
+        >
             <Tab.Screen
                 name="Accounts"
                 component={Accounts}
@@ -98,8 +97,8 @@ export default function ChildTabs() {
 
 const styles = StyleSheet.create({
     tabBarItem: {
-        paddingTop:10,
         alignItems:'center', 
+        paddingTop:10,
         justifyContent:'center', 
     },
     tabBarItemLabel: {

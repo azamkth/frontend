@@ -5,45 +5,26 @@ import {
 import {Colors} from './colors';
 
 export const globalStyles = StyleSheet.create({
-    container: {
-        flex:1, 
-        position:'relative',
-        paddingTop:75, 
-        paddingLeft:14, 
-        paddingRight:14, 
-        backgroundColor:Colors.primary100, 
+    /* font weight */
+    fontBold: {
+        fontWeight:'bold'
     },
-    boxContainer: {
-        marginRight:11, 
-        width:142, 
-        alignItems:'center'
+    fontMedium: {
+        fontWeight:'500'
     },
-    flexRow: {
-        flexDirection:'row', 
+    textBase: {
+        fontSize:12
     },
-    flexCol: {
-        flexDirection:'column', 
+    textLg: {
+        fontSize:14
     },
-    justifyBetween: {
-        justifyContent:'space-between',
+    textXl: {
+        fontSize:16
     },
-    justifyCenter: {
-        justifyContent:'center',
+    text2Xl: {
+        fontSize:32
     },
-    justifyEnd: {
-        justifyContent:'flex-end',
-    },
-    itemsCenter:{
-        alignItems:'center'
-    },
-    greyBox: {
-        paddingLeft:13, 
-        paddingRight:13, 
-        backgroundColor:Colors.primary200, 
-        borderRadius:15, 
-        paddingTop:13, 
-        paddingBottom:12
-    },
+    /* Text color */
     textPrimary100:{
         color:Colors.primary100,
     },
@@ -71,24 +52,29 @@ export const globalStyles = StyleSheet.create({
     textFail: {
         color:Colors.alert100,
     },
-    fontBold: {
-        fontWeight:'bold'
+    /* flex and text align  */
+    flexRow: {
+        flexDirection:'row', 
     },
-    fontMedium: {
-        fontWeight:'500'
+    flexCol: {
+        flexDirection:'column', 
     },
-    textBase: {
-        fontSize:12
+    justifyBetween: {
+        justifyContent:'space-between',
     },
-    textLg: {
-        fontSize:14
+    justifyCenter: {
+        justifyContent:'center',
     },
-    textXl: {
-        fontSize:16
+    justifyEnd: {
+        justifyContent:'flex-end',
     },
-    text2Xl: {
-        fontSize:32
+    itemsCenter:{
+        alignItems:'center'
     },
+    textCenter:{
+        textAlign:'center'
+    },
+    /* progressbar */
     progressBarWrapper:{
         borderColor:'#4C4C73', 
         backgroundColor:'#4C4C73', 
@@ -104,6 +90,28 @@ export const globalStyles = StyleSheet.create({
         borderRadius:8, 
         backgroundColor:Colors.green100
     },
+
+    container: {
+        flex:1, 
+        position:'relative',
+        paddingTop:75, 
+        paddingLeft:14, 
+        paddingRight:14, 
+        backgroundColor:Colors.primary100, 
+    },
+    boxContainer: {
+        marginRight:11, 
+        width:142, 
+        alignItems:'center'
+    },
+    greyBox: {
+        paddingLeft:13, 
+        paddingRight:13, 
+        backgroundColor:Colors.primary200, 
+        borderRadius:15, 
+        paddingTop:13, 
+        paddingBottom:12
+    },
     smallBox: {
         paddingLeft:41, 
         paddingRight:41, 
@@ -113,8 +121,4 @@ export const globalStyles = StyleSheet.create({
         width:142, 
         height:94
     },
-    textCenter:{
-        textAlign:'center'
-    }
-
 });
