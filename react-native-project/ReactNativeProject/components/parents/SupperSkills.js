@@ -47,8 +47,12 @@ export default function SupperSkills() {
                     <Image style={{width:60, height:60}} source={skill.image} />
                 </View>
                 <View style={[globalStyles.flexCol,{marginTop:7}]}>
-                    <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textPrimary100]}>{skill.id}. {skill.title}</Text>
-                    <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textPrimary500, {paddingTop:7}]}>{skill.description}</Text>
+                    <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textPrimary100]}>
+                        {skill.id}. {skill.title}
+                    </Text>
+                    <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textPrimary500, {paddingTop:7}]}>
+                        {skill.description}
+                    </Text>
                 </View>
             </View>
         );  

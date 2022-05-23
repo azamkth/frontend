@@ -43,7 +43,6 @@ const badges = [
     },
 ];
 
-
 export default function FinancialBadge() {
     const financialBadge = badges.map(function (badge) {
         return (
@@ -52,8 +51,12 @@ export default function FinancialBadge() {
                     <Image style={{width:60, height:60}} source={badge.image} />
                 </View>
                 <View style={[globalStyles.flexCol,{marginTop:7}]}>
-                    <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textPrimary100]}>{badge.title}</Text>
-                    <Text style={[badge.status?globalStyles.textSuccess:globalStyles.textFail, globalStyles.textXl, globalStyles.textCenter,  {paddingTop:7}]}>{badge.statusText}</Text>
+                    <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textPrimary100]}>
+                        {badge.title}¨
+                    </Text>
+                    <Text style={[badge.status?globalStyles.textSuccess:globalStyles.textFail, globalStyles.textXl, globalStyles.textCenter,  {paddingTop:7}]}>
+                        {badge.statusText}
+                    </Text>
                 </View>
             </View>
         );  
