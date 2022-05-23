@@ -1,7 +1,6 @@
 import React from 'react';
 import { 
     View,
-    StyleSheet,
     Text,
     ScrollView,
     Image
@@ -14,7 +13,9 @@ const planet2 = require('../images/profile/planet2.png');
 export default function SupperSkills() {
     return (
         <View style={{ marginTop:39}}>
-            <Text style={[globalStyles.fontBold, globalStyles.textPrimary100 ,{fontSize:20, paddingBottom:14, paddingLeft:13}]}>SupperSkills Adventure</Text>
+            <Text style={[globalStyles.fontBold, globalStyles.textPrimary100 ,{fontSize:20, paddingBottom:14, paddingLeft:13}]}>
+                SupperSkills Adventure {globalStyles.neutral100}
+            </Text>
             <ScrollView 
                 showsHorizontalScrollIndicator={false} 
                 horizontal={true} 

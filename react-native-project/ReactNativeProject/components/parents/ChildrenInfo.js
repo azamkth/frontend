@@ -10,6 +10,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import {globalStyles} from '../styles/global';
+import {Colors} from '../styles/colors';
 
 const lucas = require('../images/parent/lucas.png');
 const bank = require('../images/parent/bank.png');
@@ -20,7 +21,7 @@ export default function ChildrenInfo(props) {
         <View style={globalStyles.container}>
             <View style={[globalStyles.justifyBetween, globalStyles.flexRow, globalStyles.itemsCenter]}>
                 <View style={[globalStyles.flexRow, globalStyles.itemsCenter]}>
-                    <Text style={globalStyles.heading}>Lucas</Text>
+                    <Text style={[globalStyles.text2Xl, globalStyles.fontBold, globalStyles.textNeutral100]}>Lucas</Text>
                     <TouchableOpacity 
                         onPress={() => props.navigation.navigate('ChildProfile')}
                     >
@@ -50,7 +51,7 @@ export default function ChildrenInfo(props) {
                         />
                     </View>
                     <View style={[globalStyles.flexRow, globalStyles.itemsCenter, {marginTop:21}]}>
-                        <Icon name={'circle'} size={10} color={green100} style={{paddingRight:7}} />
+                        <Icon name={'circle'} size={10} color={Colors.green100} style={{paddingRight:7}} />
                         <Text style={[globalStyles.textPrimary500, globalStyles.textLg]}>Active</Text>
                     </View>
                 </View>
@@ -101,7 +102,7 @@ export default function ChildrenInfo(props) {
                 <View style={globalStyles.itemsCenter}>
                     <TouchableOpacity 
                         onPress={()=> alert('Dammy CTA')}
-                        style={[globalStyles.justifyCenter, globalStyles.itemsCenter,{width:39, height:39, backgroundColor:primary700, borderRadius:999}]}
+                        style={[globalStyles.justifyCenter, globalStyles.itemsCenter,{width:39, height:39, backgroundColor:Colors.primary700, borderRadius:999}]}
                     >
                         <Icon name={'plus'} size={20} color={'#fff'} />
                     </TouchableOpacity>
@@ -119,7 +120,4 @@ export default function ChildrenInfo(props) {
         </View>    
     );
 }
-
-const primary700  =  '#5050FF';
-const green100  =  '#46E68C';
 

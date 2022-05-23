@@ -2,15 +2,7 @@ import {
     StyleSheet,
 } from 'react-native';
 
-const neutral100 = '#ffffff';
-const primary100  = '#000037';
-const primary200  = '#262652';
-const primary300  = '#333755';
-const primary400  = '#4C4C73';
-const primary500  = '#9B9BAA';
-const primary600  = '#C8C8D4';
-const primary700  =  '#5050FF';
-const green100  =  '#46E68C';
+import {Colors} from './colors';
 
 export const globalStyles = StyleSheet.create({
     container: {
@@ -19,7 +11,7 @@ export const globalStyles = StyleSheet.create({
         paddingTop:75, 
         paddingLeft:14, 
         paddingRight:14, 
-        backgroundColor:primary100, 
+        backgroundColor:Colors.primary100, 
     },
     boxContainer: {
         marginRight:11, 
@@ -44,39 +36,34 @@ export const globalStyles = StyleSheet.create({
     itemsCenter:{
         alignItems:'center'
     },
-    heading:{
-        color:neutral100, 
-        fontSize:32,
-        fontWeight:'bold'
-    },
     greyBox: {
         paddingLeft:13, 
         paddingRight:13, 
-        backgroundColor:primary200, 
+        backgroundColor:Colors.primary200, 
         borderRadius:15, 
         paddingTop:13, 
         paddingBottom:12
     },
     textPrimary100:{
-        color:primary100,
+        color:Colors.primary100,
     },
     textPrimary200: {
-        color: primary200,
+        color:Colors.primary200,
     },
     textPrimary400: {
-        color: primary500,
+        color:Colors.primary500,
     },
     textPrimary600: {
-        color: primary600,
+        color:Colors.primary600,
     },
     textPrimary500: {
-        color: primary500,
+        color:Colors.primary500,
     },
     textNeutral100: {
-        color: neutral100,
+        color:Colors.neutral100,
     },
     textNeutral100: {
-        color: neutral100,
+        color:Colors.neutral100,
     },
     fontBold: {
         fontWeight:'bold'
@@ -109,17 +96,20 @@ export const globalStyles = StyleSheet.create({
         height:7,
         zIndex: 3, 
         borderRadius:8, 
-        backgroundColor:green100
+        backgroundColor:Colors.green100
     },
     smallBox: {
         paddingLeft:41, 
         paddingRight:41, 
-        backgroundColor:primary100, 
+        backgroundColor:Colors.primary100, 
         borderRadius:15, 
         paddingTop:17, 
         paddingBottom:17,
         width:142, 
         height:94
+    },
+    textCenter:{
+        textAlign:'center'
     }
 
 });
