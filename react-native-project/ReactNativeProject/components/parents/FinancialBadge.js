@@ -7,10 +7,11 @@ import {
     Image
 } from 'react-native';
 
+import {Colors} from '../styles/colors';
 import {globalStyles} from '../styles/global';
-const planet1 = require('../images/profile/planet1.png');
-const planet2 = require('../images/profile/planet2.png');
-const piggybankLevel3 = require('../images/child/piggybank-level3.png');
+const card1 = require('../images/profile/card1.png');
+const lawnMower = require('../images/profile/planet2.png');
+
 
 export default function FinancialBadge() {
     return (
@@ -24,47 +25,47 @@ export default function FinancialBadge() {
                 style={{paddingLeft:13}}
             >
                 <View style={globalStyles.boxContainer}>
-                    <View style={globalStyles.smallBox}>
-                        <Image style={{width:60, height:60}} source={planet1} />
+                    <View style={[globalStyles.smallBox, {backgroundColor:Colors.primary800}]}>
+                        <Image style={{width:60, height:60}} source={card1} />
                     </View>
                     <View style={[globalStyles.flexCol,{marginTop:7}]}>
-                        <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textPrimary100]}>1. What is money really?</Text>
-                        <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textPrimary500, {paddingTop:7}]}>25 XP</Text>
+                        <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textPrimary100]}>Card test</Text>
+                        <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textFail, {paddingTop:7}]}>Failed!</Text>
                     </View>
                 </View>
                 <View style={globalStyles.boxContainer}>
-                    <View style={globalStyles.smallBox}>
-                        <Image style={{width:60, height:60}} source={planet2} />
+                    <View style={[globalStyles.smallBox, {backgroundColor:Colors.primary800}]}>
+                        <Image style={{width:60, height:60}} source={lawnMower} />
                     </View>
                     <View style={[globalStyles.flexCol,{marginTop:7}]}>
-                        <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textPrimary100]}>2. Cost & pricing</Text>
-                        <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textPrimary500, {paddingTop:7}]}>0 XP</Text>
+                        <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textPrimary100]}>Earn test</Text>
+                        <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textSuccess, {paddingTop:7}]}>Success!</Text>
                     </View>
                 </View>
                 <View style={globalStyles.boxContainer}>
-                    <View style={globalStyles.smallBox}>
+                    <View style={[globalStyles.smallBox, {backgroundColor:Colors.primary800}]}>
                         
                     </View>
                     <View style={[globalStyles.flexCol,{marginTop:7}]}>
-                        <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textPrimary100]}>3. Cost & pricing</Text>
+                        <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textPrimary100]}>Testing</Text>
                         <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textPrimary500, {paddingTop:7}]}>0 XP</Text>
                     </View>
                 </View>    
                 <View style={globalStyles.boxContainer}>
-                    <View style={globalStyles.smallBox}>
+                    <View style={[globalStyles.smallBox, {backgroundColor:Colors.primary800}]}>
                         
                     </View>
                     <View style={[globalStyles.flexCol,{marginTop:7}]}>
-                        <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textPrimary100]}>4. Cost & pricing</Text>
+                        <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textPrimary100]}>Testing</Text>
                         <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textPrimary500, {paddingTop:7}]}>0 XP</Text>
                     </View>
                 </View>    
                 <View style={globalStyles.boxContainer}>
-                    <View style={globalStyles.smallBox}>
+                    <View style={[globalStyles.smallBox, {backgroundColor:Colors.primary800}]}>
                         
                     </View>
                     <View style={[globalStyles.flexCol,{marginTop:7}]}>
-                        <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textPrimary100]}>5. Cost & pricing</Text>
+                        <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textPrimary100]}>Testing</Text>
                         <Text style={[globalStyles.textXl, globalStyles.textCenter, globalStyles.textPrimary500, {paddingTop:7}]}>0 XP</Text>
                     </View>
                 </View>    

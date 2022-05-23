@@ -7,6 +7,9 @@ import {
 } from 'react-native';
 
 import {globalStyles} from '../styles/global';
+import {Colors} from '../styles/colors';
+
+
 const planet1 = require('../images/profile/planet1.png');
 const planet2 = require('../images/profile/planet2.png');
 
@@ -22,7 +25,7 @@ export default function SupperSkills() {
                 style={{paddingLeft:13}}
             >
                 <View style={globalStyles.boxContainer}>
-                    <View style={globalStyles.smallBox}>
+                    <View style={[globalStyles.smallBox, {backgroundColor:Colors.primary100}]}>
                         <Image style={{width:60, height:60}} source={planet1} />
                     </View>
                     <View style={[globalStyles.flexCol,{marginTop:7}]}>
@@ -31,7 +34,7 @@ export default function SupperSkills() {
                     </View>
                 </View>
                 <View style={globalStyles.boxContainer}>
-                    <View style={globalStyles.smallBox}>
+                    <View style={[globalStyles.smallBox, {backgroundColor:Colors.primary100}]}>
                         <Image style={{width:60, height:60}} source={planet2} />
                     </View>
                     <View style={[globalStyles.flexCol,{marginTop:7}]}>
@@ -40,7 +43,7 @@ export default function SupperSkills() {
                     </View>
                 </View>
                 <View style={globalStyles.boxContainer}>
-                    <View style={globalStyles.smallBox}>
+                    <View style={[globalStyles.smallBox, {backgroundColor:Colors.primary100}]}>
                         
                     </View>
                     <View style={[globalStyles.flexCol,{marginTop:7}]}>
@@ -49,7 +52,7 @@ export default function SupperSkills() {
                     </View>
                 </View>    
                 <View style={globalStyles.boxContainer}>
-                    <View style={globalStyles.smallBox}>
+                    <View style={[globalStyles.smallBox, {backgroundColor:Colors.primary100}]}>
                         
                     </View>
                     <View style={[globalStyles.flexCol,{marginTop:7}]}>
@@ -58,7 +61,7 @@ export default function SupperSkills() {
                     </View>
                 </View>    
                 <View style={globalStyles.boxContainer}>
-                    <View style={globalStyles.smallBox}>
+                    <View style={[globalStyles.smallBox, {backgroundColor:Colors.primary100}]}>
                         
                     </View>
                     <View style={[globalStyles.flexCol,{marginTop:7}]}>

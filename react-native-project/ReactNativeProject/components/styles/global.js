@@ -65,6 +65,12 @@ export const globalStyles = StyleSheet.create({
     textNeutral100: {
         color:Colors.neutral100,
     },
+    textSuccess: {
+        color:Colors.green100,
+    },
+    textFail: {
+        color:Colors.alert100,
+    },
     fontBold: {
         fontWeight:'bold'
     },
@@ -101,7 +107,6 @@ export const globalStyles = StyleSheet.create({
     smallBox: {
         paddingLeft:41, 
         paddingRight:41, 
-        backgroundColor:Colors.primary100, 
         borderRadius:15, 
         paddingTop:17, 
         paddingBottom:17,
