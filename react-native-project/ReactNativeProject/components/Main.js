@@ -10,14 +10,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import Parents from './parents/Parents';
+import ParentTabs from './parents/ParentTabs';
 import Children from './childrens/Children';
 
 function HomeScreen(props) {
     return (
         <SafeAreaView>
             <TouchableOpacity 
-                onPress={() => props.navigation.navigate('Parents')}
+                onPress={() => props.navigation.navigate('ParentTabs')}
             >
                 <Icon name="rocket" size={30} color="#900" />
                 <Text style={{color:'#000'}}>Parents</Text>
@@ -43,8 +43,8 @@ export default function Main() {
                     options={{ headerShown: false }}
                 />
                 <Stack.Screen
-                    name="Parents"
-                    component={Parents}
+                    name="ParentTabs"
+                    component={ParentTabs}
                     options={{ headerShown: false }}
                 />
                 <Stack.Screen

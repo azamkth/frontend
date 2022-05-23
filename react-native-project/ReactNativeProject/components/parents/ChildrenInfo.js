@@ -16,7 +16,7 @@ const bank = require('../images/parent/bank.png');
 const starRainbow = require('../images/parent/starRainbow.png');
 
 
-export default function Children(props) {
+export default function ChildrenInfo(props) {
     updatePasswordWithApi = () => {
         props.navigation.navigate('ChildProfile');
     };

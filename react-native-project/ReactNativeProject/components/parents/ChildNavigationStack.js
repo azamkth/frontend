@@ -2,15 +2,15 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
 
-import Children from './Children';
+import ChildrenInfo from './ChildrenInfo';
 import ChildProfile from './ChildProfile';
 
 function ChildNavigationStack() {
     return (
         <Stack.Navigator >
             <Stack.Screen
-                name="Children"
-                component={Children}
+                name="ChildrenInfo"
+                component={ChildrenInfo}
                 options={{
                     headerShown: false
                 }}
