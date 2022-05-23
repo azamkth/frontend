@@ -3,7 +3,8 @@ import {
     View,
     Text,
     TouchableOpacity,
-    StyleSheet
+    StyleSheet,
+    Image
 } from 'react-native';
  
 import {Colors} from './styles/colors';
@@ -13,20 +14,26 @@ import ParentTabs from './parents/ParentTabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+const gimiLogo = require('./images/gimi.jpeg');
+
 function HomeScreen(props) {
     return (
         <View style={styles.container}>
+            <Image
+                style={{height:200, width:260}}
+                source={gimiLogo}
+            />
             <TouchableOpacity 
-                style={styles.primaryBtn}
+                style={[styles.primaryBtn, styles.btn]}
                 onPress={() => props.navigation.navigate('ParentTabs')}
             >
                 <Text style={styles.btnTxt}>Parent</Text>
             </TouchableOpacity>
             <TouchableOpacity 
-                style={[styles.primaryBtn, {marginTop:20}]}
+                style={[styles.secondaryBtn, styles.btn,{marginTop:30}]}
                 onPress={() => props.navigation.navigate('ChildTabs')}
             >
-                <Text style={styles.btnTxt}>Children</Text>
+                <Text style={[styles.btnTxt]}>Children</Text>
             </TouchableOpacity>
         </View>
     );
@@ -61,20 +68,28 @@ export default function Main() {
 const styles = StyleSheet.create({
     container: {
        flex: 1,
+       paddingTop:150,
        alignItems:'center',
-       justifyContent:'center',
-       backgroundColor: Colors.primary200,
+       backgroundColor: Colors.primary100,
     },
     primaryBtn: {
-        width:120, 
-        padding:8, 
-        borderColor:Colors.neutral100, 
-        borderWidth:1, 
-        borderRadius:8
+        backgroundColor:Colors.primary200
+    },
+    secondaryBtn: {
+        backgroundColor:Colors.primary300
+    },
+    btn:{
+        width:250, 
+        paddingTop:12, 
+        paddingBottom:12, 
+        borderRadius:20,
     },
     btnTxt: {
         color:Colors.neutral100, 
-        textAlign:'center'
+        fontSize:16,
+        textAlign:'center',
+        fontWeight:'500',
+        letterSpacing:1
     }
 });
 
