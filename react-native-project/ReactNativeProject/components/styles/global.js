@@ -75,7 +75,7 @@ export const globalStyles = StyleSheet.create({
         fontWeight:'bold'
     },
     fontMedium: {
-        fontWeight:500
+        fontWeight:'500'
     },
     textBase: {
         fontSize:12

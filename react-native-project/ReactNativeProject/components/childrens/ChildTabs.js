@@ -6,16 +6,14 @@ import {
     StyleSheet,
 } from 'react-native';
 
-const white = '#ffffff';
-const darkGrey = '#333755';
+import Dammy from '../common/Dammy';
+import {Colors} from '../styles/colors';
+import Accounts from './Accounts';
 
 const user = require('../images/child/user.png');
 const rocket = require('../images/child/rocket.png');
 const planet = require('../images/child/planet.png');
 const dumbbell = require('../images/child/dumbbell.png');
-
-import Dammy from '../common/Dammy';
-import Accounts from './Accounts';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -27,11 +25,11 @@ export default function ChildTabs() {
         <Tab.Navigator
                 screenOptions={({ route }) => ({
                     tabBarShowLabel:false,
-                    tabBarActiveTintColor: white,
-                    tabBarInactiveTintColor: white,
+                    tabBarActiveTintColor: Colors.neutral100,
+                    tabBarInactiveTintColor: Colors.neutral100,
                     tabBarStyle: {
                         paddingTop: 10,
-                        backgroundColor: darkGrey,
+                        backgroundColor: Colors.primary300,
                     },
                     tabBarLabelStyle:{
                         paddingTop: 10,
@@ -40,19 +38,19 @@ export default function ChildTabs() {
                         let iconName, compoentName, foucedIconColor;
                         if (route.name == 'Accounts') {
                             iconName = focused ? planet : planet;
-                            foucedIconColor = focused ? white : darkGrey;
+                            foucedIconColor = focused ? Colors.neutral100 : Colors.primary300;
                             compoentName = 'Accounts';
                         } else if (route.name == 'Earn') {
                             iconName = focused ? dumbbell : dumbbell;
-                            foucedIconColor = focused ? white : darkGrey;
+                            foucedIconColor = focused ? Colors.neutral100 : Colors.primary300;
                             compoentName = 'Earn';
                         } else if (route.name == 'Goal') {
                             iconName = focused ? rocket : rocket;
-                            foucedIconColor = focused ? white : darkGrey;
+                            foucedIconColor = focused ? Colors.neutral100 : Colors.primary300;
                             compoentName = 'Goal';
                         } else if (route.name == 'Profile') {
                             iconName = focused ? user : user;
-                            foucedIconColor = focused ? white : darkGrey;
+                            foucedIconColor = focused ? Colors.neutral100 : Colors.primary300;
                             compoentName = 'Profile';
                         }
                         return(
@@ -105,7 +103,7 @@ const styles = StyleSheet.create({
         justifyContent:'center', 
     },
     tabBarItemLabel: {
-        color:white, 
+        color: Colors.neutral100,
         fontSize:12,
         paddingTop:5,
         paddingBottom:5, 

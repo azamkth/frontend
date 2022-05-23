@@ -6,8 +6,8 @@ import {
     StyleSheet
 } from 'react-native';
 
-import {Colors} from '../styles/colors';
 import Dammy from '../common/Dammy';
+import {Colors} from '../styles/colors';
 import ChildNavigationStack from './ChildNavigationStack';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -22,43 +22,43 @@ const Tab = createBottomTabNavigator();
 export default function Parents() {
     return (
         <Tab.Navigator
-                screenOptions={({ route }) => ({
-                    tabBarShowLabel:false,
-                    tabBarActiveTintColor: Colors.neutral100,
-                    tabBarInactiveTintColor: Colors.neutral100,
-                    tabBarStyle: {
-                        paddingTop: 10,
-                        backgroundColor: Colors.primary300,
-                    },
-                    tabBarLabelStyle:{
-                        paddingTop: 10,
-                    },
-                    tabBarIcon: ({ focused, color, size }) => {
-                        let iconName, compoentName, foucedIconColor;
-                        if (route.name == 'Children') {
-                            iconName = focused ? pacman : pacman;
-                            foucedIconColor = focused ? Colors.neutral100 : Colors.primary300;
-                            compoentName = 'Children';
-                        } else if (route.name == 'Notifications') {
-                            iconName = focused ? bell : bell;
-                            foucedIconColor = focused ? Colors.neutral100 : Colors.primary300;
-                            compoentName = 'Notifications';
-                        } else if (route.name == 'Settings') {
-                            foucedIconColor = focused ? Colors.neutral100 : Colors.primary300;
-                            iconName = focused ? wrench : wrench;
-                            compoentName = 'Settings';
-                        } 
-                        return(
-                            <View style={styles.tabBarItem}>
-                                 <Image style={{width:22, height:20}} source={iconName} resizeMode="contain" />      
-                                 <Text style={styles.tabBarItemLabel}>{compoentName}</Text>
-                                 <Icon name="circle" size={8} color={foucedIconColor} />
-                            </View>
-                        ) 
-                    },
-                })}
-               
-            >
+            screenOptions={({ route }) => ({
+                tabBarShowLabel:false,
+                tabBarActiveTintColor: Colors.neutral100,
+                tabBarInactiveTintColor: Colors.neutral100,
+                tabBarStyle: {
+                    paddingTop: 10,
+                    backgroundColor: Colors.primary300,
+                },
+                tabBarLabelStyle:{
+                    paddingTop: 10,
+                },
+                tabBarIcon: ({ focused, color, size }) => {
+                    let iconName, compoentName, foucedIconColor;
+                    if (route.name == 'Children') {
+                        iconName = focused ? pacman : pacman;
+                        foucedIconColor = focused ? Colors.neutral100 : Colors.primary300;
+                        compoentName = 'Children';
+                    } else if (route.name == 'Notifications') {
+                        iconName = focused ? bell : bell;
+                        foucedIconColor = focused ? Colors.neutral100 : Colors.primary300;
+                        compoentName = 'Notifications';
+                    } else if (route.name == 'Settings') {
+                        foucedIconColor = focused ? Colors.neutral100 : Colors.primary300;
+                        iconName = focused ? wrench : wrench;
+                        compoentName = 'Settings';
+                    } 
+                    return(
+                        <View style={styles.tabBarItem}>
+                                <Image style={{width:22, height:20}} source={iconName} resizeMode="contain" />      
+                                <Text style={styles.tabBarItemLabel}>{compoentName}</Text>
+                                <Icon name="circle" size={8} color={foucedIconColor} />
+                        </View>
+                    ) 
+                },
+            })}
+            
+        >
             <Tab.Screen
                 name="Children"
                 component={ChildNavigationStack}
