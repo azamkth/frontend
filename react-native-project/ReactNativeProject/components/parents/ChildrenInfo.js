@@ -101,7 +101,7 @@ export default function ChildrenInfo(props) {
                 <View style={styles.itemsCenter}>
                     <TouchableOpacity 
                         onPress={()=> alert('Dammy CTA')}
-                        style={[styles.justifyCenter, styles.itemsCenter,{width:39, height:39, backgroundColor:primary600, borderRadius:999}]}
+                        style={[styles.justifyCenter, styles.itemsCenter,{width:39, height:39, backgroundColor:primary700, borderRadius:999}]}
                     >
                         <Icon name={'plus'} size={20} color={'#fff'} />
                     </TouchableOpacity>
@@ -127,7 +127,7 @@ const primary300  = '#333755';
 const primary400  = '#4C4C73';
 const primary500  = '#9B9BAA';
 
-const primary600  =  '#5050FF';
+const primary700  =  '#5050FF';
 const green100  =  '#46E68C';
 
 const styles = StyleSheet.create({

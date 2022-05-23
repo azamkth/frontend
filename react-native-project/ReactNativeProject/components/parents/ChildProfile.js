@@ -145,11 +145,11 @@ export default function ChildProfile(props) {
                 </TouchableOpacity>
                 
                 <View style={{paddingLeft:15, paddingRight:15, paddingTop:24}}>
-                    <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+                    <View style={[styles.flexRow, styles.justifyBetween]}>
                         <View>
-                            <Text style={{color:'#fff', fontSize:28,fontWeight:'bold'}}>Lucas</Text>
+                            <Text style={[styles.textNeutral100, styles.fontBold,{fontSize:28}]}>Lucas</Text>
                         </View>
-                        <View style={{marginTop:3, flexDirection:'row', alignItems:'center'}}>
+                        <View style={[styles.flexRow, styles.itemsCenter,{marginTop:3}]}>
                             <Image
                                 style={{width:32, height:32}}
                                 source={lucas}
@@ -157,19 +157,19 @@ export default function ChildProfile(props) {
                             <Image style={{width:13, height:13,  marginLeft:12}} source={wrench} />
                         </View>
                     </View>
-                    <View style={{flexDirection:'row', alignItems:'center', marginTop:7}}>
+                    <View style={[styles.flexRow, styles.itemsCenter, {marginTop:7}]}>
                         <Image style={{width:17, height:17, marginRight:7}} source={diamond} resizeMode="contain" />
-                        <Text style={{color:'#C8C8D4', fontSize:16, paddingRight:2}}>50 XP</Text>
+                        <Text style={[styles.textPrimary600,styles.textXl, {paddingRight:2}]}>50 XP</Text>
                         <Image style={{width:17, height:17, marginRight:7, marginLeft:7}} source={star} resizeMode="contain" />
-                        <Text style={{color:'#C8C8D4', fontSize:15}}>Lvl 1</Text>
+                        <Text style={[styles.textPrimary600,styles.textXl]}>Lvl 1</Text>
                     </View>
-                    <View style={{flexDirection:'row', justifyContent:'space-between',marginTop:21}}>
-                        <Text style={{color:'#FFF', fontSize:16, paddingRight:2}}>50 XP needed to next level!</Text>
-                        <Text style={{color:'#C8C8D4', fontSize:15}}>Lvl 2</Text>
+                    <View style={[styles.flexRow, styles.justifyBetween, {marginTop:21}]}>
+                        <Text style={[styles.textNeutral100,styles.textXl,{paddingRight:2}]}>50 XP needed to next level!</Text>
+                        <Text style={[styles.textPrimary600,styles.textXl]}>Lvl 2</Text>
                     </View>
                     <View style={{ position:'relative', marginTop:7}}>
-                        <View style={{borderColor:'#4C4C73', backgroundColor:'#4C4C73', height:13, borderRadius:8}}>
-                            <View style={[ {width:'80%', position:'absolute', height:13,zIndex: 3, borderRadius:8, backgroundColor:'#46E68C'}]}>
+                        <View style={[styles.progressBarWrapper,{height:13}]}>
+                            <View style={[styles.progressBar,{width:'80%', height:13}]}>
                             </View>    
                         </View>
                     </View>
@@ -208,8 +208,9 @@ const primary200  = '#262652';
 const primary300  = '#333755';
 const primary400  = '#4C4C73';
 const primary500  = '#9B9BAA';
+const primary600  = '#C8C8D4';
 
-const primary600  =  '#5050FF';
+const primary700  =  '#5050FF';
 const green100  =  '#46E68C';
 
 const styles = StyleSheet.create({
@@ -257,6 +258,9 @@ const styles = StyleSheet.create({
     },
     textPrimary400: {
         color: primary500,
+    },
+    textPrimary600: {
+        color: primary600,
     },
     textPrimary500: {
         color: primary500,
