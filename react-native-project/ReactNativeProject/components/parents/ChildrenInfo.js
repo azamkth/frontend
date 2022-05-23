@@ -7,27 +7,28 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-import Icon from 'react-native-vector-icons/FontAwesome';
-
-import {globalStyles} from '../styles/global';
 import {Colors} from '../styles/colors';
+import {globalStyles} from '../styles/global';
 
 const lucas = require('../images/parent/lucas.png');
 const bank = require('../images/parent/bank.png');
+const chevronRight = require('../images/child/chevron-right.png');
 const starRainbow = require('../images/parent/starRainbow.png');
+
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function ChildrenInfo(props) {
     return (
         <View style={globalStyles.container}>
             <View style={[globalStyles.justifyBetween, globalStyles.flexRow, globalStyles.itemsCenter]}>
-                <View style={[globalStyles.flexRow, globalStyles.itemsCenter]}>
+                <TouchableOpacity 
+                    style={[globalStyles.flexRow, globalStyles.itemsCenter]}
+                    onPress={() => props.navigation.navigate('ChildProfile')}
+                >
                     <Text style={[globalStyles.text2Xl, globalStyles.fontBold, globalStyles.textNeutral100]}>Lucas</Text>
-                    <TouchableOpacity 
-                        onPress={() => props.navigation.navigate('ChildProfile')}
-                    >
-                        <Icon name={'chevron-right'} size={20} color={'#fff'} style={{paddingTop:8, paddingLeft:8}} light />
-                    </TouchableOpacity>
-                </View>
+                
+                    <Image style={{width:17, height:17, marginTop:5}} source={chevronRight}  />
+                </TouchableOpacity>   
                 <Image
                     style={{width:34, height:34}}
                     source={lucas}

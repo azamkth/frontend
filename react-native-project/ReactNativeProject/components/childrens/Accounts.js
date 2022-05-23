@@ -1,7 +1,6 @@
 import React from 'react';
 import { 
     View,
-    StyleSheet,
     Text,
     Image,
     ImageBackground
@@ -10,12 +9,11 @@ import {
 import {Colors} from '../styles/colors';
 import {globalStyles} from '../styles/global';
 
-const cyberspaceFull = require('../images/child/cyberspace-full.png');
 const chevronRight = require('../images/child/chevron-right.png');
+const cyberspaceFull = require('../images/child/cyberspace-full.png');
 const piggybankLevel3 = require('../images/child/piggybank-level3.png');
 
-
-export default function Accounts(props) {
+export default function Accounts() {
     return (
         <ImageBackground
             resizeMode="cover"
@@ -39,7 +37,7 @@ export default function Accounts(props) {
                         <Image style={{width:17, height:17, marginTop:2, marginLeft:7}} source={chevronRight} resizeMode="contain" />
                     </View>
 
-                    <View style={{marginTop:18, backgroundColor:'#262652', borderRadius:15, paddingBottom:12, marginBottom:15}}>
+                    <View style={{marginTop:18, backgroundColor:Colors.primary200, borderRadius:15, paddingBottom:12, marginBottom:15}}>
                         <View style={{ position:'relative'}}>
                             <View style={[globalStyles.progressBarWrapper, {height:13, borderTopRightRadius:8,borderTopLeftRadius:8,borderBottomRightRadius:0,borderBottomLeftRadius:0}]}>
                                 <View style={[globalStyles.progressBar, {width:'80%',height:13, borderBottomLeftRadius:0}]}>
@@ -58,8 +56,8 @@ export default function Accounts(props) {
                                 </View>
                                 <View style={[globalStyles.flexRow, globalStyles.itemsCenter]}>
                                     <View style={globalStyles.flexRow}>
-                                        <Text style={{color:'#fff', fontSize:30, paddingRight:2}}>+ 35</Text>
-                                        <Text style={{color:'#fff', fontSize:12,lineHeight: 23}}>kr</Text>
+                                        <Text style={[globalStyles.textNeutral100,{fontSize:30, paddingRight:2}]}>+ 35</Text>
+                                        <Text style={[globalStyles.textNeutral100, globalStyles.textBase, {lineHeight: 23}]}>kr</Text>
                                     </View>
                                     <Image style={{width:17, height:17,  marginLeft:7}} source={chevronRight} resizeMode="contain" />
                                 </View>
@@ -67,7 +65,6 @@ export default function Accounts(props) {
                         </View>
                     </View>
                 </View>
-
             </View>
         </ImageBackground>
     );
